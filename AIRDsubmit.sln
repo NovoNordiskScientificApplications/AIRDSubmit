@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIRD Service Mockup", "AIRDService\AIRD Service Mockup.csproj", "{7DFFA444-727A-4B27-9B44-9660D01974D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIRDsubmit", "AIRDsubmit\AIRDsubmit.csproj", "{DF750635-2812-449D-BED1-F98782362928}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7DFFA444-727A-4B27-9B44-9660D01974D9} = {7DFFA444-727A-4B27-9B44-9660D01974D9}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DFFA444-727A-4B27-9B44-9660D01974D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DFFA444-727A-4B27-9B44-9660D01974D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DFFA444-727A-4B27-9B44-9660D01974D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DFFA444-727A-4B27-9B44-9660D01974D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF750635-2812-449D-BED1-F98782362928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF750635-2812-449D-BED1-F98782362928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF750635-2812-449D-BED1-F98782362928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF750635-2812-449D-BED1-F98782362928}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

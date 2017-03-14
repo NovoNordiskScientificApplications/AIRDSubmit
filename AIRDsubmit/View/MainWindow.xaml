@@ -1,0 +1,332 @@
+﻿<Window x:Class="AIRDsubmit.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AIRDsubmit"
+        xmlns:ValidationRules="clr-namespace:AIRDsubmit.ValidationRules"        
+        mc:Ignorable="d"
+        Title="AIRD Excel Uploader" Height="350" Width="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="202*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.RowSpan="2"  HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top"  FontWeight="Bold" FontSize="16" Content="AIRD excel uploader"/>
+
+        <Label Content="Username:" Grid.Column="1" FontWeight="Bold"/>
+        <TextBox Name="Username" Width="150" Margin="5" Grid.Column="1" Grid.Row="1" />
+        <Label Content="Password:" Grid.Column="2" FontWeight="Bold"/>
+        <PasswordBox Name="Password" Width="150" Margin="5" Grid.Column="2" Grid.Row="1"/>
+
+        <Button  Name="btnOpen" Grid.Column="3"  Margin="10" FontSize="16" Click="btnOpen_Click" Grid.RowSpan="2" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Source="/AIRDsubmit;component/Resources/Microsoft-Excel-2013-icon.png" Width="24" Height="24" UseLayoutRounding="True"></Image>
+                <TextBlock Text="Open excel sheet" Grid.Column="2" VerticalAlignment="Center"/>
+            </Grid>
+        </Button>
+
+        <Button Content="Upload to AIRD" Name="btnUpload" Grid.Column="4"  Margin="10" FontSize="16" Click="btnUpload_Click" Grid.RowSpan="2" />
+        <DataGrid AutoGenerateColumns="false" Grid.ColumnSpan="10" Grid.Row="2" Name="dataGrid"
+                  BeginningEdit="grid_BeginningEdit"
+                  HorizontalScrollBarVisibility="Visible"
+                  CanUserAddRows="False"
+                  HeadersVisibility="All"
+                  ItemsSource="{Binding Records}">
+            <DataGrid.Resources>
+                <Style x:Key="CellErrorStyle" TargetType="{x:Type TextBlock}">
+                    <Style.Triggers>
+                        <Trigger Property="Validation.HasError" Value="true">
+                            <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Header="Uploaded" Binding="{Binding Uploaded, UpdateSourceTrigger=PropertyChanged}" Width="40" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Permission ID" Binding="{Binding Permission, UpdateSourceTrigger=PropertyChanged}" Width="auto"/>
+                <DataGridTemplateColumn Header="Species" Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Style="{StaticResource CellErrorStyle}">
+                                <TextBlock.Text>
+                                    <Binding Path="Species" UpdateSourceTrigger="PropertyChanged">
+                                        <Binding.ValidationRules>
+                                            <ValidationRules:SpeciesValidationRule ValidationStep="RawProposedValue" ValidatesOnTargetUpdated="True"/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox Text="{Binding Species, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" ItemsSource="{Binding Path=DataContext.Species, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Species Other" Binding="{Binding SpeciesOther, UpdateSourceTrigger=PropertyChanged}" Width="auto" ElementStyle="{StaticResource CellErrorStyle}"/>
+                <DataGridTextColumn Header="Number of Animals" Binding="{Binding Number, UpdateSourceTrigger=PropertyChanged}" Width="auto" ElementStyle="{StaticResource CellErrorStyle}"/>
+                <DataGridTemplateColumn Header="Reuse" Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Style="{StaticResource CellErrorStyle}">
+                                <TextBlock.Text>
+                                    <Binding Path="Reuse" UpdateSourceTrigger="PropertyChanged">
+                                        <Binding.ValidationRules>
+                                            <ValidationRules:ReuseValidationRule ValidationStep="RawProposedValue" ValidatesOnTargetUpdated="True"/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox Text="{Binding Reuse}" ItemsSource="{Binding Path=DataContext.Reuse, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Place of Birth" Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Style="{StaticResource CellErrorStyle}">
+                                <TextBlock.Text>
+                                    <Binding Path="PlaceOfBirth" UpdateSourceTrigger="PropertyChanged">
+                                        <Binding.ValidationRules>
+                                            <ValidationRules:PlaceOfBirthValidationRule ValidationStep="RawProposedValue" ValidatesOnTargetUpdated="True"/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox Text="{Binding PlaceOfBirth}" ItemsSource="{Binding Path=DataContext.PlaceOfBirth, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="NHP Source" Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Style="{StaticResource CellErrorStyle}">
+                                <TextBlock.Text>
+                                    <Binding Path="NHPSource" UpdateSourceTrigger="PropertyChanged">
+                                        <Binding.ValidationRules>
+                                            <ValidationRules:NHPSourceValidationRule ValidationStep="RawProposedValue" ValidatesOnTargetUpdated="True"/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox Text="{Binding NHPSource}" ItemsSource="{Binding Path=DataContext.NHPSource, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="NHP Generation" Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Style="{StaticResource CellErrorStyle}">
+                                <TextBlock.Text>
+                                    <Binding Path="NHPGeneration" UpdateSourceTrigger="PropertyChanged">
+                                        <Binding.ValidationRules>
+                                            <ValidationRules:NHPGenerationValidationRule ValidationStep="RawProposedValue" ValidatesOnTargetUpdated="True"/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox Text="{Binding NHPGeneration}" ItemsSource="{Binding Path=DataContext.NHPGeneration, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Genetic Status" Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Style="{StaticResource CellErrorStyle}">
+                                <TextBlock.Text>
+                                    <Binding Path="GeneticStatus" UpdateSourceTrigger="PropertyChanged">
+                                        <Binding.ValidationRules>
+                                            <ValidationRules:GeneticStatusValidationRule ValidationStep="RawProposedValue" ValidatesOnTargetUpdated="True"/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox Text="{Binding GeneticStatus}" ItemsSource="{Binding Path=DataContext.GeneticStatus, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Creation of Genetic Line" Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Style="{StaticResource CellErrorStyle}">
+                                <TextBlock.Text>
+                                    <Binding Path="CreationOfGeneticLine" UpdateSourceTrigger="PropertyChanged">
+                                        <Binding.ValidationRules>
+                                            <ValidationRules:CreationOfGeneticLineValidationRule ValidationStep="RawProposedValue" ValidatesOnTargetUpdated="True"/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox Text="{Binding CreationOfGeneticLine}" ItemsSource="{Binding Path=DataContext.CreationOfGeneticLine, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Purpose" Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Style="{StaticResource CellErrorStyle}">
+                                <TextBlock.Text>
+                                    <Binding Path="Purpose" UpdateSourceTrigger="PropertyChanged">
+                                        <Binding.ValidationRules>
+                                            <ValidationRules:PurposeValidationRule ValidationStep="RawProposedValue" ValidatesOnTargetUpdated="True"/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox Text="{Binding Purpose}" ItemsSource="{Binding Path=DataContext.Purpose, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Purpose Other" Binding="{Binding PurposeOther, UpdateSourceTrigger=PropertyChanged}" Width="auto" ElementStyle="{StaticResource CellErrorStyle}"/>
+                <DataGridTemplateColumn Header="Testing by Legislation" Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Style="{StaticResource CellErrorStyle}">
+                                <TextBlock.Text>
+                                    <Binding Path="TestingByLegislation" UpdateSourceTrigger="PropertyChanged">
+                                        <Binding.ValidationRules>
+                                            <ValidationRules:TestingByLegislationValidationRule ValidationStep="RawProposedValue" ValidatesOnTargetUpdated="True"/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox Text="{Binding TestingByLegislation}" ItemsSource="{Binding Path=DataContext.TestingByLegislation, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Specify other (testing by legislation)" Binding="{Binding TestingByLegislationOther, UpdateSourceTrigger=PropertyChanged}" Width="auto" ElementStyle="{StaticResource CellErrorStyle}"/>
+                <DataGridTemplateColumn Header="Legislative Requirements" Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Style="{StaticResource CellErrorStyle}">
+                                <TextBlock.Text>
+                                    <Binding Path="LegislativeRequirements" UpdateSourceTrigger="PropertyChanged">
+                                        <Binding.ValidationRules>
+                                            <ValidationRules:LegislativeRequirementsValidationRule ValidationStep="RawProposedValue" ValidatesOnTargetUpdated="True"/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox Text="{Binding LegislativeRequirements}" ItemsSource="{Binding Path=DataContext.LegislativeRequirements, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Severity" Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Style="{StaticResource CellErrorStyle}">
+                                <TextBlock.Text>
+                                    <Binding Path="Severity" UpdateSourceTrigger="PropertyChanged">
+                                        <Binding.ValidationRules>
+                                            <ValidationRules:SeverityValidationRule ValidationStep="RawProposedValue" ValidatesOnTargetUpdated="True"/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox Text="{Binding Severity}" ItemsSource="{Binding Path=DataContext.Severity, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Custom Severity" Binding="{Binding CustomSeverity, UpdateSourceTrigger=PropertyChanged}" Width="auto" ElementStyle="{StaticResource CellErrorStyle}"/>
+                <DataGridTextColumn Header="Comments 1" Binding="{Binding Comments1, UpdateSourceTrigger=PropertyChanged}" Width="auto" ElementStyle="{StaticResource CellErrorStyle}"/>
+                <DataGridTextColumn Header="Comments 2" Binding="{Binding Comments2, UpdateSourceTrigger=PropertyChanged}" Width="auto" ElementStyle="{StaticResource CellErrorStyle}"/>
+                <DataGridTextColumn Header="Year" Binding="{Binding Year, UpdateSourceTrigger=PropertyChanged}" Width="auto" ElementStyle="{StaticResource CellErrorStyle}"/>
+            </DataGrid.Columns>
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Setter Property="DetailsVisibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Uploaded}" Value="true">
+                            <Setter Property="Background" Value="LightGreen"></Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding UploadError}" Value="true">
+                            <Setter Property="Background" Value="LightPink"></Setter>
+                            <Setter Property="ToolTip" Value="{Binding Path=ErrorMessage}"/>
+                            <Setter Property="DetailsVisibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.RowValidationRules>
+                <ValidationRules:RecordValidationRule ValidationStep="CommittedValue" ValidatesOnTargetUpdated="True"/>
+            </DataGrid.RowValidationRules>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <Grid Margin="40,0,0,0" ToolTip="{Binding Path=ErrorMessage}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Ellipse Width="12" Height="12" Fill="Red" Stroke="Black" StrokeThickness="0.5"/>
+                        <TextBlock FontWeight="Bold" Padding="4,0,0,0" Margin="0" VerticalAlignment="Top" Foreground="White" Text="!"/>
+                        <TextBlock Text="{Binding ErrorMessage}" Padding="4,0,0,0"  HorizontalAlignment="Left" Grid.Column="1"/>
+                    </Grid>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+            <DataGrid.RowValidationErrorTemplate>
+                <ControlTemplate>
+                    <Grid ToolTip="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGridRow}}, Path=(Validation.Errors)[0].ErrorContent}">
+                        <Ellipse Width="12" Height="12" Fill="Red" Stroke="Black" StrokeThickness="0.5"/>
+                        <TextBlock FontWeight="Bold" Padding="4,0,0,0" Margin="0" VerticalAlignment="Top" Foreground="White" Text="!"/>
+                    </Grid>
+                </ControlTemplate>
+            </DataGrid.RowValidationErrorTemplate>
+        </DataGrid>
+    </Grid>
+</Window>

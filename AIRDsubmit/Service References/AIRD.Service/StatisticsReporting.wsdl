@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://FVST.Dyreforsoeg.ReportingWebService/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://FVST.Dyreforsoeg.ReportingWebService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://FVST.Dyreforsoeg.ReportingWebService/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="Add">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="reportingInfo" type="tns:ReportingInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReportingInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalReportingCaptiaIdLinks" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalUnitReportingLinks" type="tns:ArrayOfApprovalUnitReportingLink" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpeciesOther" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NoOfAnimals" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PurposeOther" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TestingByLegislationOther" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomSeverity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comments1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comments2" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Reuse" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlaceOfBirth" type="tns:PlaceOfBirth" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreationOfNewGL" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Purpose" type="tns:Purpose" />
+          <s:element minOccurs="1" maxOccurs="1" name="LegislativeRequirements" type="tns:LegislativeRequirements" />
+          <s:element minOccurs="1" maxOccurs="1" name="Severity" type="tns:Severity" />
+          <s:element minOccurs="1" maxOccurs="1" name="GeneticStatus" type="tns:GeneticStatus" />
+          <s:element minOccurs="1" maxOccurs="1" name="Species" type="tns:Specie" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReportingYear" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NHPSource" nillable="true" type="tns:NHPSource" />
+          <s:element minOccurs="1" maxOccurs="1" name="NHPGeneration" nillable="true" type="tns:NHPGeneration" />
+          <s:element minOccurs="1" maxOccurs="1" name="TestingByLegislation" nillable="true" type="tns:TestingByLegislation" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfApprovalUnitReportingLink">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ApprovalUnitReportingLink" nillable="true" type="tns:ApprovalUnitReportingLink" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ApprovalUnitReportingLink">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ApprovalUnitId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReportingId" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="PlaceOfBirth">
+        <s:restriction base="s:string">
+          <s:enumeration value="O1" />
+          <s:enumeration value="O2" />
+          <s:enumeration value="O3" />
+          <s:enumeration value="O4" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="Purpose">
+        <s:restriction base="s:string">
+          <s:enumeration value="PB1" />
+          <s:enumeration value="PB2" />
+          <s:enumeration value="PB3" />
+          <s:enumeration value="PB4" />
+          <s:enumeration value="PB5" />
+          <s:enumeration value="PB6" />
+          <s:enumeration value="PB7" />
+          <s:enumeration value="PB8" />
+          <s:enumeration value="PB9" />
+          <s:enumeration value="PB10" />
+          <s:enumeration value="PB11" />
+          <s:enumeration value="PB12" />
+          <s:enumeration value="PB13" />
+          <s:enumeration value="PT21" />
+          <s:enumeration value="PT22" />
+          <s:enumeration value="PT23" />
+          <s:enumeration value="PT24" />
+          <s:enumeration value="PT25" />
+          <s:enumeration value="PT26" />
+          <s:enumeration value="PT27" />
+          <s:enumeration value="PT28" />
+          <s:enumeration value="PT29" />
+          <s:enumeration value="PT30" />
+          <s:enumeration value="PT31" />
+          <s:enumeration value="PT32" />
+          <s:enumeration value="PT33" />
+          <s:enumeration value="PT34" />
+          <s:enumeration value="PT35" />
+          <s:enumeration value="PT36" />
+          <s:enumeration value="PT37" />
+          <s:enumeration value="PE40" />
+          <s:enumeration value="PS41" />
+          <s:enumeration value="PE42" />
+          <s:enumeration value="PF43" />
+          <s:enumeration value="PG43" />
+          <s:enumeration value="PR51" />
+          <s:enumeration value="PR52" />
+          <s:enumeration value="PR53" />
+          <s:enumeration value="PR61" />
+          <s:enumeration value="PR62" />
+          <s:enumeration value="PR63" />
+          <s:enumeration value="PR64" />
+          <s:enumeration value="PR71" />
+          <s:enumeration value="PR81" />
+          <s:enumeration value="PR82" />
+          <s:enumeration value="PR83" />
+          <s:enumeration value="PR84" />
+          <s:enumeration value="PR85" />
+          <s:enumeration value="PR86" />
+          <s:enumeration value="PR87" />
+          <s:enumeration value="PR88" />
+          <s:enumeration value="PR89" />
+          <s:enumeration value="PR90" />
+          <s:enumeration value="PR91" />
+          <s:enumeration value="PR92" />
+          <s:enumeration value="PR93" />
+          <s:enumeration value="PR94" />
+          <s:enumeration value="PR95" />
+          <s:enumeration value="PR96" />
+          <s:enumeration value="PR97" />
+          <s:enumeration value="PR98" />
+          <s:enumeration value="PR99" />
+          <s:enumeration value="PR100" />
+          <s:enumeration value="PR101" />
+          <s:enumeration value="PR102" />
+          <s:enumeration value="PR103" />
+          <s:enumeration value="PR104" />
+          <s:enumeration value="PR105" />
+          <s:enumeration value="PR106" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="LegislativeRequirements">
+        <s:restriction base="s:string">
+          <s:enumeration value="LO1" />
+          <s:enumeration value="LO2" />
+          <s:enumeration value="LO3" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="Severity">
+        <s:restriction base="s:string">
+          <s:enumeration value="SV1" />
+          <s:enumeration value="SV2" />
+          <s:enumeration value="SV3" />
+          <s:enumeration value="SV4" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="GeneticStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="GS1" />
+          <s:enumeration value="GS2" />
+          <s:enumeration value="GS3" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="Specie">
+        <s:restriction base="s:string">
+          <s:enumeration value="A1" />
+          <s:enumeration value="A2" />
+          <s:enumeration value="A3" />
+          <s:enumeration value="A4" />
+          <s:enumeration value="A5" />
+          <s:enumeration value="A6" />
+          <s:enumeration value="A7" />
+          <s:enumeration value="A8" />
+          <s:enumeration value="A9" />
+          <s:enumeration value="A10" />
+          <s:enumeration value="A11" />
+          <s:enumeration value="A12" />
+          <s:enumeration value="A13" />
+          <s:enumeration value="A14" />
+          <s:enumeration value="A15" />
+          <s:enumeration value="A16" />
+          <s:enumeration value="A17" />
+          <s:enumeration value="A18" />
+          <s:enumeration value="A19" />
+          <s:enumeration value="A20" />
+          <s:enumeration value="A21" />
+          <s:enumeration value="A22" />
+          <s:enumeration value="A23" />
+          <s:enumeration value="A24" />
+          <s:enumeration value="A25" />
+          <s:enumeration value="A26" />
+          <s:enumeration value="A27" />
+          <s:enumeration value="A28" />
+          <s:enumeration value="A29" />
+          <s:enumeration value="A30" />
+          <s:enumeration value="A31" />
+          <s:enumeration value="A32" />
+          <s:enumeration value="A33" />
+          <s:enumeration value="A34" />
+          <s:enumeration value="A35" />
+          <s:enumeration value="A36" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="NHPSource">
+        <s:restriction base="s:string">
+          <s:enumeration value="NHPO1" />
+          <s:enumeration value="NHPO2" />
+          <s:enumeration value="NHPO3" />
+          <s:enumeration value="NHPO4" />
+          <s:enumeration value="NHPO5" />
+          <s:enumeration value="NHPO6" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="NHPGeneration">
+        <s:restriction base="s:string">
+          <s:enumeration value="NHPG1" />
+          <s:enumeration value="NHPG2" />
+          <s:enumeration value="NHPG3" />
+          <s:enumeration value="NHPG4" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="TestingByLegislation">
+        <s:restriction base="s:string">
+          <s:enumeration value="LT1" />
+          <s:enumeration value="LT2" />
+          <s:enumeration value="LT3" />
+          <s:enumeration value="LT4" />
+          <s:enumeration value="LT5" />
+          <s:enumeration value="LT6" />
+          <s:enumeration value="LT7" />
+          <s:enumeration value="LT8" />
+          <s:enumeration value="LT9" />
+          <s:enumeration value="LT10" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="AddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddResult" type="tns:ReportingInfoResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReportingInfoResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Reporting" type="tns:ReportingInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="tns:ErrorMessage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ErrorMessage">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Code" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsSuccess" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AuthInfo" type="tns:AuthInfo" />
+      <s:complexType name="AuthInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="Finalize">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yearlyReportingInfo" type="tns:YearlyReportingInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="YearlyReportingInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ApprovalUnitId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="CaptiaId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Year" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDone" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FinalizeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FinalizeResult" type="tns:YearlyReportingInfoReponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="YearlyReportingInfoReponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="YearlyReportingInfo" type="tns:YearlyReportingInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="tns:ErrorMessage" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddSoapIn">
+    <wsdl:part name="parameters" element="tns:Add" />
+  </wsdl:message>
+  <wsdl:message name="AddSoapOut">
+    <wsdl:part name="parameters" element="tns:AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddAuthInfo">
+    <wsdl:part name="AuthInfo" element="tns:AuthInfo" />
+  </wsdl:message>
+  <wsdl:message name="FinalizeSoapIn">
+    <wsdl:part name="parameters" element="tns:Finalize" />
+  </wsdl:message>
+  <wsdl:message name="FinalizeSoapOut">
+    <wsdl:part name="parameters" element="tns:FinalizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="FinalizeAuthInfo">
+    <wsdl:part name="AuthInfo" element="tns:AuthInfo" />
+  </wsdl:message>
+  <wsdl:portType name="StatisticsReportingSoap">
+    <wsdl:operation name="Add">
+      <wsdl:input message="tns:AddSoapIn" />
+      <wsdl:output message="tns:AddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Finalize">
+      <wsdl:input message="tns:FinalizeSoapIn" />
+      <wsdl:output message="tns:FinalizeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="StatisticsReportingSoap" type="tns:StatisticsReportingSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Add">
+      <soap:operation soapAction="http://FVST.Dyreforsoeg.ReportingWebService/Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddAuthInfo" part="AuthInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Finalize">
+      <soap:operation soapAction="http://FVST.Dyreforsoeg.ReportingWebService/Finalize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:FinalizeAuthInfo" part="AuthInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="StatisticsReportingSoap12" type="tns:StatisticsReportingSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Add">
+      <soap12:operation soapAction="http://FVST.Dyreforsoeg.ReportingWebService/Add" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddAuthInfo" part="AuthInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Finalize">
+      <soap12:operation soapAction="http://FVST.Dyreforsoeg.ReportingWebService/Finalize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:FinalizeAuthInfo" part="AuthInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="StatisticsReporting">
+    <wsdl:port name="StatisticsReportingSoap" binding="tns:StatisticsReportingSoap">
+      <soap:address location="http://reportingdyreforsoeg.fvst.dk/StatisticsReporting.asmx" />
+    </wsdl:port>
+    <wsdl:port name="StatisticsReportingSoap12" binding="tns:StatisticsReportingSoap12">
+      <soap12:address location="http://reportingdyreforsoeg.fvst.dk/StatisticsReporting.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

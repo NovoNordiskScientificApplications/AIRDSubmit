@@ -1,0 +1,603 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="A1" xml:space="preserve">
+    <value>[A1] Mice (Mus musculus)</value>
+  </data>
+  <data name="A10" xml:space="preserve">
+    <value>[A10] Dogs (Canis familiaris)</value>
+  </data>
+  <data name="A11" xml:space="preserve">
+    <value>[A11] Ferrets (Mustela putorius furo)</value>
+  </data>
+  <data name="A12" xml:space="preserve">
+    <value>[A12] Other carnivores (other Carnivora)</value>
+  </data>
+  <data name="A13" xml:space="preserve">
+    <value>[A13] Horses, donkeys and cross-breeds (Equidae)</value>
+  </data>
+  <data name="A14" xml:space="preserve">
+    <value>[A14] Pigs (Sus scrofa domesticus)</value>
+  </data>
+  <data name="A15" xml:space="preserve">
+    <value>[A15] Goats (Capra aegagrus hircus)</value>
+  </data>
+  <data name="A16" xml:space="preserve">
+    <value>[A16] Sheep (Ovis aries)</value>
+  </data>
+  <data name="A17" xml:space="preserve">
+    <value>[A17] Cattle (Bos primigenius)</value>
+  </data>
+  <data name="A18" xml:space="preserve">
+    <value>[A18] Prosimians (Prosimia)</value>
+  </data>
+  <data name="A19" xml:space="preserve">
+    <value>[A19] Marmoset and tamarins (eg. Callithrix jacchus)</value>
+  </data>
+  <data name="A2" xml:space="preserve">
+    <value>[A2] Rats (Rattus norvegicus)</value>
+  </data>
+  <data name="A20" xml:space="preserve">
+    <value>[A20] Cynomolgus monkey (Macaca fascicularis)</value>
+  </data>
+  <data name="A21" xml:space="preserve">
+    <value>[A21] Rhesus monkey (Macaca mulatta)</value>
+  </data>
+  <data name="A22" xml:space="preserve">
+    <value>[A22] Vervets Chlorocebus spp. (usually either pygerythrus or sabaeus)</value>
+  </data>
+  <data name="A23" xml:space="preserve">
+    <value>[A23] Baboons (Papio spp.)</value>
+  </data>
+  <data name="A24" xml:space="preserve">
+    <value>[A24] Squirrel monkey (eg. Saimiri sciureus)</value>
+  </data>
+  <data name="A25" xml:space="preserve">
+    <value>[A25] Other species of non-human primates (other species of Ceboidea and Cercopithecoidea)</value>
+  </data>
+  <data name="A26" xml:space="preserve">
+    <value>[A26] Apes (Hominoidea)</value>
+  </data>
+  <data name="A27" xml:space="preserve">
+    <value>[A27] Other Mammals (other Mammalia)</value>
+  </data>
+  <data name="A28" xml:space="preserve">
+    <value>[A28] Domestic fowl (Gallus gallus domesticus)</value>
+  </data>
+  <data name="A29" xml:space="preserve">
+    <value>[A29] Other birds (other Aves)</value>
+  </data>
+  <data name="A3" xml:space="preserve">
+    <value>[A3] Guinea-Pigs (Cavia porcellus)</value>
+  </data>
+  <data name="A30" xml:space="preserve">
+    <value>[A30] Reptiles (Reptilia)</value>
+  </data>
+  <data name="A31" xml:space="preserve">
+    <value>[A31] Rana (Rana temporaria and Rana pipiens)</value>
+  </data>
+  <data name="A32" xml:space="preserve">
+    <value>[A32] Xenopus (Xenopus laevis and Xenopus tropicalis)</value>
+  </data>
+  <data name="A33" xml:space="preserve">
+    <value>[A33] Other Amphibians (other Amphibia)</value>
+  </data>
+  <data name="A34" xml:space="preserve">
+    <value>[A34] Zebra fish (Danio rerio)</value>
+  </data>
+  <data name="A35" xml:space="preserve">
+    <value>[A35] Other Fish (other Pisces)</value>
+  </data>
+  <data name="A36" xml:space="preserve">
+    <value>[A36] Cephalopods (Cephalopoda)</value>
+  </data>
+  <data name="A4" xml:space="preserve">
+    <value>[A4] Hamsters (Syrian) (Mesocricetus auratus)</value>
+  </data>
+  <data name="A5" xml:space="preserve">
+    <value>[A5] Hamsters (chinese) (Cricetulus griseus)</value>
+  </data>
+  <data name="A6" xml:space="preserve">
+    <value>[A6] Mongolian gerbil (Meriones unguiculatus)</value>
+  </data>
+  <data name="A7" xml:space="preserve">
+    <value>[A7] Other Rodents (other Rodentia)</value>
+  </data>
+  <data name="A8" xml:space="preserve">
+    <value>[A8] Rabbits (Oryctolagus cuniculus)</value>
+  </data>
+  <data name="A9" xml:space="preserve">
+    <value>[A9] Cats (Felis catus)</value>
+  </data>
+  <data name="ColumnComments1" xml:space="preserve">
+    <value>Comments 1</value>
+  </data>
+  <data name="ColumnComments2" xml:space="preserve">
+    <value>Comments 2</value>
+  </data>
+  <data name="ColumnCreationOfGeneticLine" xml:space="preserve">
+    <value>Creation of Genetic Line</value>
+  </data>
+  <data name="ColumnCustomSeverity" xml:space="preserve">
+    <value>Custom Severity</value>
+  </data>
+  <data name="ColumnGeneticStatus" xml:space="preserve">
+    <value>Genetic Status</value>
+  </data>
+  <data name="ColumnLegislativeRequirements" xml:space="preserve">
+    <value>Legislative Requirement</value>
+  </data>
+  <data name="ColumnNHPGeneration" xml:space="preserve">
+    <value>NHP Generation</value>
+  </data>
+  <data name="ColumnNHPSource" xml:space="preserve">
+    <value>NHP Source (origin)</value>
+  </data>
+  <data name="ColumnNumber" xml:space="preserve">
+    <value>Number of Animals</value>
+  </data>
+  <data name="ColumnPermission" xml:space="preserve">
+    <value>Id 1</value>
+  </data>
+  <data name="ColumnPlaceOfBirth" xml:space="preserve">
+    <value>Place of birth (origin)</value>
+  </data>
+  <data name="ColumnPurpose" xml:space="preserve">
+    <value>Purpose</value>
+  </data>
+  <data name="ColumnPurposeOther" xml:space="preserve">
+    <value>Specify Other (Purpose)</value>
+  </data>
+  <data name="ColumnReuse" xml:space="preserve">
+    <value>Reuse</value>
+  </data>
+  <data name="ColumnSeverity" xml:space="preserve">
+    <value>Severity</value>
+  </data>
+  <data name="ColumnSpecies" xml:space="preserve">
+    <value>Animal Species</value>
+  </data>
+  <data name="ColumnSpeciesOther" xml:space="preserve">
+    <value>Specify other</value>
+  </data>
+  <data name="ColumnTestingByLegislation" xml:space="preserve">
+    <value>Testing by Legislation</value>
+  </data>
+  <data name="ColumnTestingByLegislationOther" xml:space="preserve">
+    <value>Specify other (Testing by Legislation)</value>
+  </data>
+  <data name="ColumnUploaded" xml:space="preserve">
+    <value>Uploaded</value>
+  </data>
+  <data name="ColumnYear" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="DefaultYear" xml:space="preserve">
+    <value>2016</value>
+  </data>
+  <data name="GS1" xml:space="preserve">
+    <value>[GS1] Not genetically altered</value>
+  </data>
+  <data name="GS2" xml:space="preserve">
+    <value>[GS2] Genetically altered without a harmful phenotype</value>
+  </data>
+  <data name="GS3" xml:space="preserve">
+    <value>[GS3] Genetically altered with a harmful phenotype</value>
+  </data>
+  <data name="LO1" xml:space="preserve">
+    <value>[LO1] Legislation satisfying EU requirements</value>
+  </data>
+  <data name="LO2" xml:space="preserve">
+    <value>[LO2] Legislation satisfying national requirements only (within EU)</value>
+  </data>
+  <data name="LO3" xml:space="preserve">
+    <value>[LO3] Legislation satisfying Non-EU requirements only</value>
+  </data>
+  <data name="LT1" xml:space="preserve">
+    <value>[LT1] Legislation on medicinal products for human use</value>
+  </data>
+  <data name="LT10" xml:space="preserve">
+    <value>[LT10] Other</value>
+  </data>
+  <data name="LT2" xml:space="preserve">
+    <value>[LT2] Legislation on medicinal products for veterinary use and their residues</value>
+  </data>
+  <data name="LT3" xml:space="preserve">
+    <value>[LT3] Medical devices legislation</value>
+  </data>
+  <data name="LT4" xml:space="preserve">
+    <value>[LT4] Industrial chemicals legislation</value>
+  </data>
+  <data name="LT5" xml:space="preserve">
+    <value>[LT5] Plant protection product legislation</value>
+  </data>
+  <data name="LT6" xml:space="preserve">
+    <value>[LT6] Biocides legislation</value>
+  </data>
+  <data name="LT7" xml:space="preserve">
+    <value>[LT7] Food legislation including food contact material</value>
+  </data>
+  <data name="LT8" xml:space="preserve">
+    <value>[LT8] Feed legislation including legislation for the safety of target animals, workers and environment</value>
+  </data>
+  <data name="LT9" xml:space="preserve">
+    <value>[LT9] Cosmetics legislation</value>
+  </data>
+  <data name="NHPG1" xml:space="preserve">
+    <value>[NHPG1] F0</value>
+  </data>
+  <data name="NHPG2" xml:space="preserve">
+    <value>[NHPG2] F1</value>
+  </data>
+  <data name="NHPG3" xml:space="preserve">
+    <value>[NHPG3] F2 or greater</value>
+  </data>
+  <data name="NHPG4" xml:space="preserve">
+    <value>[NHPG4] Self-sustaining colony</value>
+  </data>
+  <data name="NHPO1" xml:space="preserve">
+    <value>[NHPO1] Animals born at a registered breeder within EU</value>
+  </data>
+  <data name="NHPO2" xml:space="preserve">
+    <value>[NHPO2] Animals born in rest of Europe</value>
+  </data>
+  <data name="NHPO3" xml:space="preserve">
+    <value>[NHPO3] Animals born in Asia</value>
+  </data>
+  <data name="NHPO4" xml:space="preserve">
+    <value>[NHPO4] Animals born in America</value>
+  </data>
+  <data name="NHPO5" xml:space="preserve">
+    <value>[NHPO5] Animals born in Africa</value>
+  </data>
+  <data name="NHPO6" xml:space="preserve">
+    <value>[NHPO6] Animals born elsewhere</value>
+  </data>
+  <data name="O1" xml:space="preserve">
+    <value>[O1] Animals born in the EU at a registered breeder</value>
+  </data>
+  <data name="O2" xml:space="preserve">
+    <value>[O2] Animals born in the EU but not at a registered breeder</value>
+  </data>
+  <data name="O3" xml:space="preserve">
+    <value>[O3] Animals born in rest of Europe</value>
+  </data>
+  <data name="O4" xml:space="preserve">
+    <value>[O4] Animals born in rest of world</value>
+  </data>
+  <data name="PB1" xml:space="preserve">
+    <value>[PB1] (Basic Research) Oncology</value>
+  </data>
+  <data name="PB10" xml:space="preserve">
+    <value>[PB10] (Basic Research) Endocrine System/Metabolism</value>
+  </data>
+  <data name="PB11" xml:space="preserve">
+    <value>[PB11] (Basic Research) Multisystemic</value>
+  </data>
+  <data name="PB12" xml:space="preserve">
+    <value>[PB12] (Basic Research) Ethology / Animal Behaviour /Animal Biology</value>
+  </data>
+  <data name="PB13" xml:space="preserve">
+    <value>[PB13] (Basic Research) Other</value>
+  </data>
+  <data name="PB2" xml:space="preserve">
+    <value>[PB2] (Basic Research) Cardiovascular Blood and Lymphatic System</value>
+  </data>
+  <data name="PB3" xml:space="preserve">
+    <value>[PB3] (Basic Research) Nervous System</value>
+  </data>
+  <data name="PB4" xml:space="preserve">
+    <value>[PB4] (Basic Research) Respiratory System</value>
+  </data>
+  <data name="PB5" xml:space="preserve">
+    <value>[PB5] (Basic Research) Gastrointestinal System including Liver</value>
+  </data>
+  <data name="PB6" xml:space="preserve">
+    <value>[PB6] (Basic Research) Musculoskeletal System</value>
+  </data>
+  <data name="PB7" xml:space="preserve">
+    <value>[PB7] (Basic Research) Immune System</value>
+  </data>
+  <data name="PB8" xml:space="preserve">
+    <value>[PB8] (Basic Research) Urogenital/Reproductive System</value>
+  </data>
+  <data name="PB9" xml:space="preserve">
+    <value>[PB9] (Basic Research) Sensory Organs (skin, eyes and ears)</value>
+  </data>
+  <data name="PE40" xml:space="preserve">
+    <value>[PE40] Protection of the natural environment in the interests of the health or welfare of human beings or animals</value>
+  </data>
+  <data name="PE42" xml:space="preserve">
+    <value>[PE42] Higher education or training for the acquisition, maintenance or improvement of vocational skills</value>
+  </data>
+  <data name="PF43" xml:space="preserve">
+    <value>[PF43] Forensic enquiries</value>
+  </data>
+  <data name="PG43" xml:space="preserve">
+    <value>[PG43] Maintenance of colonies of established genetically altered animals, not used in other procedures</value>
+  </data>
+  <data name="PR100" xml:space="preserve">
+    <value>[PR100] (Regulatory use/Toxicity and../Ecotoxicity) Reproductive toxicity</value>
+  </data>
+  <data name="PR101" xml:space="preserve">
+    <value>[PR101] (Regulatory use/Toxicity and../Ecotoxicity) Endocrine activity</value>
+  </data>
+  <data name="PR102" xml:space="preserve">
+    <value>[PR102] (Regulatory use/Toxicity and.. /Ecotoxicity) Bioaccumulation</value>
+  </data>
+  <data name="PR103" xml:space="preserve">
+    <value>[PR103] (Regulatory use/Toxicity and.. /Ecotoxicity) Other</value>
+  </data>
+  <data name="PR104" xml:space="preserve">
+    <value>[PR104] (Regulatory use/Toxicity and..) Safety testing in food and feed area</value>
+  </data>
+  <data name="PR105" xml:space="preserve">
+    <value>[PR105] (Regulatory use/Toxicity and..) Target animal safety</value>
+  </data>
+  <data name="PR106" xml:space="preserve">
+    <value>[PR106] (Regulatory use/Toxicity and..) Other</value>
+  </data>
+  <data name="PR51" xml:space="preserve">
+    <value>[PR51] (Regulatory use/ Routine production) Blood based products</value>
+  </data>
+  <data name="PR52" xml:space="preserve">
+    <value>[PR52] (Regulatory use/ Routine production) Monoclonal antibodies</value>
+  </data>
+  <data name="PR53" xml:space="preserve">
+    <value>[PR53] (Regulatory use/ Routine production) Other</value>
+  </data>
+  <data name="PR61" xml:space="preserve">
+    <value>[PR61] (Regulatory use/ Quality control) Batch safety testing</value>
+  </data>
+  <data name="PR62" xml:space="preserve">
+    <value>[PR62] (Regulatory use/ Quality control) Pyrogenicity testing</value>
+  </data>
+  <data name="PR63" xml:space="preserve">
+    <value>[PR63] (Regulatory use/ Quality control) Batch potency testing</value>
+  </data>
+  <data name="PR64" xml:space="preserve">
+    <value>[PR64] (Regulatory use/Quality control) Other quality controls</value>
+  </data>
+  <data name="PR71" xml:space="preserve">
+    <value>[PR71] (Regulatory use) Other efficacy and tolerance testing</value>
+  </data>
+  <data name="PR81" xml:space="preserve">
+    <value>[PR81] (Regulatory use/Toxicity and../Acute and sub-acute) LD50, LC50</value>
+  </data>
+  <data name="PR82" xml:space="preserve">
+    <value>[PR82] (Regulatory use/Toxicity and../Acute and sub-acute) Other lethal methods</value>
+  </data>
+  <data name="PR83" xml:space="preserve">
+    <value>[PR83] (Regulatory use/Toxicity and../Acute and sub-acute) Non lethal methods</value>
+  </data>
+  <data name="PR84" xml:space="preserve">
+    <value>[PR84] (Regulatory use/Toxicity and..) Skin irritation/corrosion</value>
+  </data>
+  <data name="PR85" xml:space="preserve">
+    <value>[PR85] (Regulatory use/Toxicity and..) Skin sensitisation</value>
+  </data>
+  <data name="PR86" xml:space="preserve">
+    <value>[PR86] (Regulatory use/Toxicity and..) Eye irritation/corrosion</value>
+  </data>
+  <data name="PR87" xml:space="preserve">
+    <value>[PR87] (Regulatory use/Toxicity and../Repeated dose toxicity) up to 28 days</value>
+  </data>
+  <data name="PR88" xml:space="preserve">
+    <value>[PR88] (Regulatory use/Toxicity and../Repeated dose toxicity) 29 - 90 days</value>
+  </data>
+  <data name="PR89" xml:space="preserve">
+    <value>[PR89] (Regulatory use/Toxicity and../Repeated dose toxicity) &gt; 90 days</value>
+  </data>
+  <data name="PR90" xml:space="preserve">
+    <value>[PR90] (Regulatory use/Toxicity and..) Carcinogenicity</value>
+  </data>
+  <data name="PR91" xml:space="preserve">
+    <value>[PR91] (Regulatory use/Toxicity and..) Genotoxicity</value>
+  </data>
+  <data name="PR92" xml:space="preserve">
+    <value>[PR92] (Regulatory use/Toxicity and..) Reproductive toxicity</value>
+  </data>
+  <data name="PR93" xml:space="preserve">
+    <value>[PR93] (Regulatory use/Toxicity and..) Developmental toxicity</value>
+  </data>
+  <data name="PR94" xml:space="preserve">
+    <value>[PR94] (Regulatory use/Toxicity and..) Neurotoxicity</value>
+  </data>
+  <data name="PR95" xml:space="preserve">
+    <value>[PR95] (Regulatory use/Toxicity and..) Kinetics</value>
+  </data>
+  <data name="PR96" xml:space="preserve">
+    <value>[PR96] (Regulatory use/Toxicity and..) Pharmaco-dynamics (incl safety pharmacology)</value>
+  </data>
+  <data name="PR97" xml:space="preserve">
+    <value>[PR97] (Regulatory use/Toxicity and..) Phototoxicity</value>
+  </data>
+  <data name="PR98" xml:space="preserve">
+    <value>[PR98] (Regulatory use/Toxicity and../Ecotoxicity) Acute toxicity</value>
+  </data>
+  <data name="PR99" xml:space="preserve">
+    <value>[PR99] (Regulatory use/Toxicity and../Ecotoxicity) Chronic toxicity</value>
+  </data>
+  <data name="PS41" xml:space="preserve">
+    <value>[PS41] Preservation of species</value>
+  </data>
+  <data name="PT21" xml:space="preserve">
+    <value>[PT21] (Trans/Appl Research) Human Cancer</value>
+  </data>
+  <data name="PT22" xml:space="preserve">
+    <value>[PT22] (Trans/Appl Research) Human Infectious Disorders</value>
+  </data>
+  <data name="PT23" xml:space="preserve">
+    <value>[PT23] (Trans/Appl Research) Human Cardiovascular Disorders</value>
+  </data>
+  <data name="PT24" xml:space="preserve">
+    <value>[PT24] (Trans/Appl Research) Human Nervous and Mental Disorders</value>
+  </data>
+  <data name="PT25" xml:space="preserve">
+    <value>[PT25] (Trans/Appl Research) Human Respiratory Disorders</value>
+  </data>
+  <data name="PT26" xml:space="preserve">
+    <value>[PT26] (Trans/Appl Research) Human Gastrointestinal Disorders including Liver</value>
+  </data>
+  <data name="PT27" xml:space="preserve">
+    <value>[PT27] (Trans/Appl Research) Human Musculoskeletal Disorders</value>
+  </data>
+  <data name="PT28" xml:space="preserve">
+    <value>[PT28] (Trans/Appl Research) Human Immune Disorders</value>
+  </data>
+  <data name="PT29" xml:space="preserve">
+    <value>[PT29] (Trans/Appl Research) Human Urogenital/Reproductive Disorders</value>
+  </data>
+  <data name="PT30" xml:space="preserve">
+    <value>[PT30] (Trans/Appl Research) Human Sensory Organ Disorders (skin, eyes and ears)</value>
+  </data>
+  <data name="PT31" xml:space="preserve">
+    <value>[PT31] (Trans/Appl Research) Human Endocrine/Metabolism Disorders</value>
+  </data>
+  <data name="PT32" xml:space="preserve">
+    <value>[PT32] (Trans/Appl Research) Other Human Disorders</value>
+  </data>
+  <data name="PT33" xml:space="preserve">
+    <value>[PT33] (Trans/Appl Research) Animal Diseases and Disorders</value>
+  </data>
+  <data name="PT34" xml:space="preserve">
+    <value>[PT34] (Trans/Appl Research) Animal Welfare</value>
+  </data>
+  <data name="PT35" xml:space="preserve">
+    <value>[PT35] (Trans/Appl Research) Diagnosis of diseases</value>
+  </data>
+  <data name="PT36" xml:space="preserve">
+    <value>[PT36] (Trans/Appl Research) Plant diseases</value>
+  </data>
+  <data name="PT37" xml:space="preserve">
+    <value>[PT37] (Trans/Appl Research) Non-regulatory toxicology and ecotoxicology</value>
+  </data>
+  <data name="SV1" xml:space="preserve">
+    <value>[SV1] Non-recovery</value>
+  </data>
+  <data name="SV2" xml:space="preserve">
+    <value>[SV2] Mild (up to and including)</value>
+  </data>
+  <data name="SV3" xml:space="preserve">
+    <value>[SV3] Moderate</value>
+  </data>
+  <data name="SV4" xml:space="preserve">
+    <value>[SV4] Severe</value>
+  </data>
+</root>
