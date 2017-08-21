@@ -30,7 +30,7 @@ namespace AIRDsubmit
         {
             var reportingInfo = new ReportingInfo();
 
-            reportingInfo.ApprovalReportingCaptiaIdLinks = new string[] { r.Permission };
+            reportingInfo.ApprovalReportingCaptiaIdLink = r.Permission;
             reportingInfo.Species = map(r.Species, SpeciesStringToEnum);
             reportingInfo.SpeciesOther = r.SpeciesOther ?? string.Empty;
             reportingInfo.NoOfAnimals = r.Number;

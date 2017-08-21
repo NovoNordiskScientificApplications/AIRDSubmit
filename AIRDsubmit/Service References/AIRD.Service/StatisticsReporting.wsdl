@@ -12,7 +12,7 @@
       </s:element>
       <s:complexType name="ReportingInfo">
         <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="ApprovalReportingCaptiaIdLinks" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalReportingCaptiaIdLink" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ApprovalUnitReportingLinks" type="tns:ArrayOfApprovalUnitReportingLink" />
           <s:element minOccurs="0" maxOccurs="1" name="SpeciesOther" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="NoOfAnimals" type="s:int" />
@@ -33,11 +33,6 @@
           <s:element minOccurs="1" maxOccurs="1" name="NHPSource" nillable="true" type="tns:NHPSource" />
           <s:element minOccurs="1" maxOccurs="1" name="NHPGeneration" nillable="true" type="tns:NHPGeneration" />
           <s:element minOccurs="1" maxOccurs="1" name="TestingByLegislation" nillable="true" type="tns:TestingByLegislation" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfString">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfApprovalUnitReportingLink">

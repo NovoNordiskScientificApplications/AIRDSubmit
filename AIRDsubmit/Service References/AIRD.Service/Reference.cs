@@ -33,7 +33,7 @@ namespace AIRDsubmit.AIRD.Service {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -93,7 +93,7 @@ namespace AIRDsubmit.AIRD.Service {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -139,7 +139,7 @@ namespace AIRDsubmit.AIRD.Service {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -213,7 +213,7 @@ namespace AIRDsubmit.AIRD.Service {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -273,7 +273,7 @@ namespace AIRDsubmit.AIRD.Service {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -319,14 +319,14 @@ namespace AIRDsubmit.AIRD.Service {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://FVST.Dyreforsoeg.ReportingWebService/")]
     public partial class ReportingInfo : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private string[] approvalReportingCaptiaIdLinksField;
+        private string approvalReportingCaptiaIdLinkField;
         
         private ApprovalUnitReportingLink[] approvalUnitReportingLinksField;
         
@@ -369,14 +369,14 @@ namespace AIRDsubmit.AIRD.Service {
         private System.Nullable<TestingByLegislation> testingByLegislationField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
-        public string[] ApprovalReportingCaptiaIdLinks {
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string ApprovalReportingCaptiaIdLink {
             get {
-                return this.approvalReportingCaptiaIdLinksField;
+                return this.approvalReportingCaptiaIdLinkField;
             }
             set {
-                this.approvalReportingCaptiaIdLinksField = value;
-                this.RaisePropertyChanged("ApprovalReportingCaptiaIdLinks");
+                this.approvalReportingCaptiaIdLinkField = value;
+                this.RaisePropertyChanged("ApprovalReportingCaptiaIdLink");
             }
         }
         
@@ -631,7 +631,7 @@ namespace AIRDsubmit.AIRD.Service {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -691,7 +691,7 @@ namespace AIRDsubmit.AIRD.Service {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://FVST.Dyreforsoeg.ReportingWebService/")]
     public enum PlaceOfBirth {
@@ -710,7 +710,7 @@ namespace AIRDsubmit.AIRD.Service {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://FVST.Dyreforsoeg.ReportingWebService/")]
     public enum Purpose {
@@ -924,7 +924,7 @@ namespace AIRDsubmit.AIRD.Service {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://FVST.Dyreforsoeg.ReportingWebService/")]
     public enum LegislativeRequirements {
@@ -940,7 +940,7 @@ namespace AIRDsubmit.AIRD.Service {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://FVST.Dyreforsoeg.ReportingWebService/")]
     public enum Severity {
@@ -959,7 +959,7 @@ namespace AIRDsubmit.AIRD.Service {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://FVST.Dyreforsoeg.ReportingWebService/")]
     public enum GeneticStatus {
@@ -975,7 +975,7 @@ namespace AIRDsubmit.AIRD.Service {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://FVST.Dyreforsoeg.ReportingWebService/")]
     public enum Specie {
@@ -1090,7 +1090,7 @@ namespace AIRDsubmit.AIRD.Service {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://FVST.Dyreforsoeg.ReportingWebService/")]
     public enum NHPSource {
@@ -1115,7 +1115,7 @@ namespace AIRDsubmit.AIRD.Service {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://FVST.Dyreforsoeg.ReportingWebService/")]
     public enum NHPGeneration {
@@ -1134,7 +1134,7 @@ namespace AIRDsubmit.AIRD.Service {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://FVST.Dyreforsoeg.ReportingWebService/")]
     public enum TestingByLegislation {

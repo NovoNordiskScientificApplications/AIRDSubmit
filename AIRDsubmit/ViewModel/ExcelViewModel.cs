@@ -19,7 +19,7 @@ namespace AIRDsubmit
         {
             DB_PATH = filePath;
         }
-                
+
         public void Load()
         {
             var mismatches = new Dictionary<string, string>();
@@ -84,7 +84,7 @@ namespace AIRDsubmit
                     string.Join("\n", mismatches.Select(c => string.Format(@"Expected ""{0}"". Found ""{1}""", c.Key, c.Value))));
             }
         }
-
+        
         public void Update(RecordViewModel record)
         {
             using(var excelPackage = new ExcelPackage(new System.IO.FileInfo(DB_PATH)))
@@ -122,36 +122,44 @@ namespace AIRDsubmit
             var auth = new AuthInfo();
             auth.UserName = Username;
             auth.Password = Password;
-            
-            foreach(RecordViewModel r in Records)
+            try
             {
-                if(!r.Uploaded)
-                {
-                    try
-                    {
-                        // Ensure that the excel database is writable before continuing
-                        Update(r);
+                st.Open();
 
-                        var reportingInfo = RecordMapper.RecordToReportingInfo(r.Record);
-                        var response = st.Add(auth, reportingInfo);
-                        
-                        if(response.ErrorMessage == null || response.ErrorMessage.IsSuccess)
-                        {
-                            r.Uploaded = true;
-                            r.ErrorMessage = null;
-                            Update(r);
-                        }
-                        else
-                        {
-                            r.ErrorMessage = string.Format("Upload error (Code {0}): {1}", response.ErrorMessage.Code, response.ErrorMessage.Message);
-                        }
-                    }
-                    catch (Exception e)
+                foreach(RecordViewModel r in Records)
+                {
+                    if(!r.Uploaded)
                     {
-                        r.ErrorMessage = string.Format("Upload error: {0}", e.Message);
-                        throw;
+                        try
+                        {
+                            // Ensure that the excel database is writable before continuing
+                            Update(r);
+
+                            var reportingInfo = RecordMapper.RecordToReportingInfo(r.Record);
+                            var response = st.Add(auth, reportingInfo);
+
+                            if(response.ErrorMessage == null || response.ErrorMessage.IsSuccess)
+                            {
+                                r.Uploaded = true;
+                                r.ErrorMessage = null;
+                                Update(r);
+                            }
+                            else
+                            {
+                                r.ErrorMessage = string.Format("Upload error (Code {0}): {1}", response.ErrorMessage.Code, response.ErrorMessage.Message);
+                            }
+                        }
+                        catch(Exception e)
+                        {
+                            r.ErrorMessage = string.Format("Upload error: {0}", e.Message);
+                            throw;
+                        }
                     }
                 }
+            }
+            finally
+            {
+                st.Close();
             }
         }
 
