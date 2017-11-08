@@ -10,9 +10,10 @@ namespace AIRDsubmit
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = viewModel = new MainViewModel();
         }
 
-        ExcelViewModel viewModel;
+        MainViewModel viewModel;
         private void btnOpen_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -20,9 +21,7 @@ namespace AIRDsubmit
             {
                 try
                 {
-                    viewModel = new ExcelViewModel(openFileDialog.FileName);
-                    viewModel.Load();
-                    DataContext = viewModel;
+                    viewModel.LoadExcelSheet(openFileDialog.FileName);
                 }
                 catch(Exception ex)
                 {
@@ -35,7 +34,7 @@ namespace AIRDsubmit
         {
             try
             {
-                viewModel.Upload(Username.Text, Password.Password);
+                viewModel.Upload(Password.Password);
             }
             catch(Exception ex)
             {

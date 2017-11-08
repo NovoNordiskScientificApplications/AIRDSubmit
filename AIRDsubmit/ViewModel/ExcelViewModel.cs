@@ -19,10 +19,6 @@ namespace AIRDsubmit
         public ExcelViewModel(string filePath)
         {
             DB_PATH = filePath;
-        }
-
-        public void Load()
-        {
             var mismatches = new Dictionary<string, string>();
             Records = new ObservableCollection<RecordViewModel>();
             using(var excelPackage = new ExcelPackage(new FileInfo(DB_PATH)))

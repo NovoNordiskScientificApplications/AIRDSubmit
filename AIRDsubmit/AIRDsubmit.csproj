@@ -70,6 +70,7 @@
     <Compile Include="ViewModel\ExcelViewModel.cs" />
     <Compile Include="Model\Record.cs" />
     <Compile Include="Model\RecordMapper.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\RecordViewModel.cs" />
     <Compile Include="ViewModel\ValidationRules.cs" />
     <Page Include="View\MainWindow.xaml">
