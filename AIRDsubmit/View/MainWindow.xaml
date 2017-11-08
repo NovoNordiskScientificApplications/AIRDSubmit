@@ -39,7 +39,17 @@
             </Grid>
         </Button>
 
-        <Button Content="Upload to AIRD" Name="btnUpload" Grid.Column="4"  Margin="10" FontSize="16" Click="btnUpload_Click" Grid.RowSpan="2" />
+        <Button Content="Upload to AIRD" Name="btnUpload" Grid.Column="4"  Margin="10" FontSize="16" Click="btnUpload_Click" Grid.RowSpan="2">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Records}" Value="{x:Null}">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
         <DataGrid AutoGenerateColumns="false" Grid.ColumnSpan="10" Grid.Row="2" Name="dataGrid"
                   BeginningEdit="grid_BeginningEdit"
                   HorizontalScrollBarVisibility="Visible"
