@@ -817,6 +817,15 @@ namespace AIRDsubmit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to [N] No.
+        /// </summary>
+        internal static string NO {
+            get {
+                return ResourceManager.GetString("NO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [O1] Animals born in the EU at a registered breeder.
         /// </summary>
         internal static string O1 {
@@ -1506,6 +1515,15 @@ namespace AIRDsubmit.Properties {
         internal static string SV4 {
             get {
                 return ResourceManager.GetString("SV4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Y] Yes.
+        /// </summary>
+        internal static string YES {
+            get {
+                return ResourceManager.GetString("YES", resourceCulture);
             }
         }
     }

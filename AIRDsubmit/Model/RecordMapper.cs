@@ -13,7 +13,7 @@ namespace AIRDsubmit
                 return default(T);
             
             if(a.ContainsKey(input ?? string.Empty))
-                    return a[input ?? string.Empty];
+                return a[input ?? string.Empty];
             else
                 throw new Exception(input + " is not a valid entry. Please select a valid entry from the list");
         }
@@ -47,13 +47,13 @@ namespace AIRDsubmit
         }
 
         public static Dictionary<string, bool> CreationOfGeneticLineStringToEnum = new Dictionary<string, bool> {
-            { "[N] No", false },
-            { "[Y] Yes", true }
+            { Resources.NO, false },
+            { Resources.YES, true }
         };
 
         public static Dictionary<string, bool> ReuseStringToEnum = new Dictionary<string, bool> {
-            { "[N] No", false },
-            { "[Y] Yes", true }
+            { Resources.NO, false },
+            { Resources.YES, true }
         };
 
         public static Dictionary<string, NHPGeneration?> NHPGenerationStringToEnum = new Dictionary<string, NHPGeneration?> {

@@ -369,6 +369,9 @@
   <data name="NHPO6" xml:space="preserve">
     <value>[NHPO6] Animals born elsewhere</value>
   </data>
+  <data name="NO" xml:space="preserve">
+    <value>[N] No</value>
+  </data>
   <data name="O1" xml:space="preserve">
     <value>[O1] Animals born in the EU at a registered breeder</value>
   </data>
@@ -599,5 +602,8 @@
   </data>
   <data name="SV4" xml:space="preserve">
     <value>[SV4] Severe</value>
+  </data>
+  <data name="YES" xml:space="preserve">
+    <value>[Y] Yes</value>
   </data>
 </root>
