@@ -2,7 +2,6 @@
 using AIRDsubmit.Properties;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace AIRDsubmit
 {
@@ -14,14 +13,7 @@ namespace AIRDsubmit
                 return default(T);
             
             if(a.ContainsKey(input ?? string.Empty))
-                try
-                {
                     return a[input ?? string.Empty];
-                }
-                catch
-                {
-                    throw new Exception(input + " is not a valid entry. Please select a valid entry from the list");
-                }
             else
                 throw new Exception(input + " is not a valid entry. Please select a valid entry from the list");
         }

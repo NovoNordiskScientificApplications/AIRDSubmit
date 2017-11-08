@@ -227,17 +227,17 @@ namespace AIRDsubmit
         }
 
         #region Lists of acceptable values
-        public List<string> Species { get { return RecordMapper.SpeciesStringToEnum.Keys.ToList(); }}
-        public List<string> Reuse { get { return RecordMapper.ReuseStringToEnum.Keys.ToList(); } }
-        public List<string> PlaceOfBirth { get { return RecordMapper.PlaceOfBirthStringToEnum.Keys.ToList(); } }
-        public List<string> NHPSource { get { return RecordMapper.NHPSourceStringToEnum.Keys.ToList(); } }
-        public List<string> NHPGeneration { get { return RecordMapper.NHPGenerationStringToEnum.Keys.ToList(); } }
-        public List<string> Purpose { get { return RecordMapper.PurposeStringToEnum.Keys.ToList(); } }
-        public List<string> TestingByLegislation { get { return RecordMapper.TestingByLegislationStringToEnum.Keys.ToList(); } }
-        public List<string> LegislativeRequirements { get { return RecordMapper.LegislativeRequirementsStringToEnum.Keys.ToList(); } }
-        public List<string> Severity { get { return RecordMapper.SeverityStringToEnum.Keys.ToList(); } }
-        public List<string> GeneticStatus { get { return RecordMapper.GeneticStatusStringToEnum.Keys.ToList(); } }
-        public List<string> CreationOfGeneticLine { get { return RecordMapper.CreationOfGeneticLineStringToEnum.Keys.ToList(); } }
+        public List<string> Species => RecordMapper.SpeciesStringToEnum.Keys.ToList();
+        public List<string> Reuse => RecordMapper.ReuseStringToEnum.Keys.ToList();
+        public List<string> PlaceOfBirth => RecordMapper.PlaceOfBirthStringToEnum.Keys.ToList();
+        public List<string> NHPSource => RecordMapper.NHPSourceStringToEnum.Keys.ToList();
+        public List<string> NHPGeneration => RecordMapper.NHPGenerationStringToEnum.Keys.ToList();
+        public List<string> Purpose => RecordMapper.PurposeStringToEnum.Keys.ToList();
+        public List<string> TestingByLegislation => RecordMapper.TestingByLegislationStringToEnum.Keys.ToList();
+        public List<string> LegislativeRequirements => RecordMapper.LegislativeRequirementsStringToEnum.Keys.ToList();
+        public List<string> Severity => RecordMapper.SeverityStringToEnum.Keys.ToList();
+        public List<string> GeneticStatus => RecordMapper.GeneticStatusStringToEnum.Keys.ToList();
+        public List<string> CreationOfGeneticLine => RecordMapper.CreationOfGeneticLineStringToEnum.Keys.ToList();
 
         #endregion
     }
