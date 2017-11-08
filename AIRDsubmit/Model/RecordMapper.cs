@@ -32,7 +32,7 @@ namespace AIRDsubmit
 
             reportingInfo.ApprovalReportingCaptiaIdLink = r.Permission;
             reportingInfo.Species = map(r.Species, SpeciesStringToEnum);
-            reportingInfo.SpeciesOther = r.SpeciesOther ?? string.Empty;
+            reportingInfo.SpeciesOther = r.SpeciesOther;
             reportingInfo.NoOfAnimals = r.Number;
             reportingInfo.Reuse = map(r.Reuse, ReuseStringToEnum);
             reportingInfo.PlaceOfBirth = map(r.PlaceOfBirth, PlaceOfBirthStringToEnum);
@@ -41,14 +41,14 @@ namespace AIRDsubmit
             reportingInfo.GeneticStatus = map(r.GeneticStatus, GeneticStatusStringToEnum);
             reportingInfo.CreationOfNewGL = map(r.CreationOfGeneticLine, CreationOfGeneticLineStringToEnum);
             reportingInfo.Purpose = map(r.Purpose, PurposeStringToEnum);
-            reportingInfo.PurposeOther = r.PurposeOther ?? string.Empty;
+            reportingInfo.PurposeOther = r.PurposeOther;
             reportingInfo.TestingByLegislation = map(r.TestingByLegislation, TestingByLegislationStringToEnum);
-            reportingInfo.TestingByLegislationOther = r.TestingByLegislationOther ?? string.Empty;
+            reportingInfo.TestingByLegislationOther = r.TestingByLegislationOther;
             reportingInfo.LegislativeRequirements = map(r.LegislativeRequirements, LegislativeRequirementsStringToEnum);
             reportingInfo.Severity = map(r.Severity, SeverityStringToEnum);
-            reportingInfo.CustomSeverity = r.CustomSeverity ?? string.Empty;
-            reportingInfo.Comments1 = r.Comments1 ?? string.Empty;
-            reportingInfo.Comments2 = r.Comments2 ?? string.Empty;
+            reportingInfo.CustomSeverity = r.CustomSeverity;
+            reportingInfo.Comments1 = r.Comments1;
+            reportingInfo.Comments2 = r.Comments2;
             reportingInfo.ReportingYear = r.Year;
             reportingInfo.ApprovalUnitReportingLinks = new ApprovalUnitReportingLink[] { };
             return reportingInfo;
