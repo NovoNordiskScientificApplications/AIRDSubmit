@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using AIRDsubmit.Properties;
 using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace AIRDsubmit
@@ -13,5 +9,11 @@ namespace AIRDsubmit
     /// </summary>
     public partial class App : Application
     {
+        public static SettingsManager Settings = new SettingsManager();
+    }
+
+    public class SettingsManager
+    {
+        public string this[string key] => ConfigurationManager.AppSettings[key] ?? Resources.ResourceManager.GetString(key);
     }
 }

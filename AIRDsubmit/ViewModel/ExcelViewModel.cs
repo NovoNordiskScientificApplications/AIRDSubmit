@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 
 namespace AIRDsubmit
@@ -24,7 +25,7 @@ namespace AIRDsubmit
         {
             var mismatches = new Dictionary<string, string>();
             Records = new ObservableCollection<RecordViewModel>();
-            using(var excelPackage = new ExcelPackage(new System.IO.FileInfo(DB_PATH)))
+            using(var excelPackage = new ExcelPackage(new FileInfo(DB_PATH)))
             using(var excelWorkBook = excelPackage.Workbook)
             using(var excelWorksheet = excelWorkBook.Worksheets.First())
             {
@@ -67,7 +68,7 @@ namespace AIRDsubmit
                     int Year;
                     if(int.TryParse(excelWorksheet.Cells[i, (int)ColumnIndex.Year].Value?.ToString(), out Year))
                         r.Year = Year;
-                    else if(int.TryParse(Resources.DefaultYear, out Year))
+                    else if(int.TryParse(App.Settings["DefaultYear"], out Year))
                         r.Year = Year;
                     bool Uploaded;
                     if(bool.TryParse(excelWorksheet.Cells[i, (int)ColumnIndex.Uploaded].Value?.ToString(), out Uploaded))
