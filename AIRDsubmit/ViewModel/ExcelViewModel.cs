@@ -15,7 +15,7 @@ namespace AIRDsubmit
         private string DB_PATH;
 
         public ObservableCollection<RecordViewModel> Records { get; private set; }
-
+        
         public ExcelViewModel(string filePath)
         {
             DB_PATH = filePath;
@@ -175,27 +175,27 @@ namespace AIRDsubmit
 
         public Dictionary<string, int> ColumnNames = new Dictionary<string, int>
         {
-            { Resources.ColumnPermission, (int)ColumnIndex.Permission },
-            { Resources.ColumnSpecies, (int)ColumnIndex.Species },
-            { Resources.ColumnSpeciesOther, (int)ColumnIndex.SpeciesOther },
-            { Resources.ColumnNumber, (int)ColumnIndex.Number },
-            { Resources.ColumnReuse, (int)ColumnIndex.Reuse },
-            { Resources.ColumnPlaceOfBirth, (int)ColumnIndex.PlaceOfBirth },
-            { Resources.ColumnNHPSource, (int)ColumnIndex.NHPSource },
-            { Resources.ColumnNHPGeneration, (int)ColumnIndex.NHPGeneration },
-            { Resources.ColumnGeneticStatus, (int)ColumnIndex.GeneticStatus },
-            { Resources.ColumnCreationOfGeneticLine, (int)ColumnIndex.CreationOfGeneticLine },
-            { Resources.ColumnPurpose, (int)ColumnIndex.Purpose },
-            { Resources.ColumnPurposeOther, (int)ColumnIndex.PurposeOther },
-            { Resources.ColumnTestingByLegislation, (int)ColumnIndex.TestingByLegislation },
-            { Resources.ColumnTestingByLegislationOther, (int)ColumnIndex.TestingByLegislationOther },
-            { Resources.ColumnLegislativeRequirements, (int)ColumnIndex.LegislativeRequirements },
-            { Resources.ColumnSeverity, (int)ColumnIndex.Severity },
-            { Resources.ColumnCustomSeverity, (int)ColumnIndex.CustomSeverity },
-            { Resources.ColumnComments1, (int)ColumnIndex.Comments1 },
-            { Resources.ColumnComments2, (int)ColumnIndex.Comments2 },
-            { Resources.ColumnYear, (int)ColumnIndex.Year },
-            { Resources.ColumnUploaded, (int)ColumnIndex.Uploaded },
+            { App.Settings["ColumnPermission"], (int)ColumnIndex.Permission },
+            { App.Settings["ColumnSpecies"], (int)ColumnIndex.Species },
+            { App.Settings["ColumnSpeciesOther"], (int)ColumnIndex.SpeciesOther },
+            { App.Settings["ColumnNumber"], (int)ColumnIndex.Number },
+            { App.Settings["ColumnReuse"], (int)ColumnIndex.Reuse },
+            { App.Settings["ColumnPlaceOfBirth"], (int)ColumnIndex.PlaceOfBirth },
+            { App.Settings["ColumnNHPSource"], (int)ColumnIndex.NHPSource },
+            { App.Settings["ColumnNHPGeneration"], (int)ColumnIndex.NHPGeneration },
+            { App.Settings["ColumnGeneticStatus"], (int)ColumnIndex.GeneticStatus },
+            { App.Settings["ColumnCreationOfGeneticLine"], (int)ColumnIndex.CreationOfGeneticLine },
+            { App.Settings["ColumnPurpose"], (int)ColumnIndex.Purpose },
+            { App.Settings["ColumnPurposeOther"], (int)ColumnIndex.PurposeOther },
+            { App.Settings["ColumnTestingByLegislation"], (int)ColumnIndex.TestingByLegislation },
+            { App.Settings["ColumnTestingByLegislationOther"], (int)ColumnIndex.TestingByLegislationOther },
+            { App.Settings["ColumnLegislativeRequirements"], (int)ColumnIndex.LegislativeRequirements },
+            { App.Settings["ColumnSeverity"], (int)ColumnIndex.Severity },
+            { App.Settings["ColumnCustomSeverity"], (int)ColumnIndex.CustomSeverity },
+            { App.Settings["ColumnComments1"], (int)ColumnIndex.Comments1 },
+            { App.Settings["ColumnComments2"], (int)ColumnIndex.Comments2 },
+            { App.Settings["ColumnYear"], (int)ColumnIndex.Year },
+            { App.Settings["ColumnUploaded"], (int)ColumnIndex.Uploaded },
         };
 
         public enum ColumnIndex
