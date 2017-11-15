@@ -58,7 +58,8 @@
                   HorizontalScrollBarVisibility="Visible"
                   CanUserAddRows="False"
                   HeadersVisibility="All"
-                  ItemsSource="{Binding ExcelViewModel.Records}">
+                  DataContext="{Binding ExcelViewModel}"
+                  ItemsSource="{Binding Records}">
             <DataGrid.Resources>
                 <Style x:Key="CellErrorStyle" TargetType="{x:Type TextBlock}">
                     <Style.Triggers>
