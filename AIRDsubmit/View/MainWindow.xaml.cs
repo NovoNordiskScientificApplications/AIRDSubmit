@@ -16,8 +16,14 @@ namespace AIRDsubmit
         MainViewModel viewModel;
         private void btnOpen_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            if(openFileDialog.ShowDialog() == true)
+            OpenFileDialog openFileDialog = new OpenFileDialog()
+            {
+                Filter = "Excel Workbooks (*.xlsx)|*.xlsx",
+                RestoreDirectory = true,
+                CheckFileExists = true,
+            };
+
+            if (openFileDialog.ShowDialog() == true)
             {
                 try
                 {
