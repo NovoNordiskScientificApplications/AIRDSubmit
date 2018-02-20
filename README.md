@@ -1,37 +1,50 @@
-## Welcome to GitHub Pages
+## AIRDSubmit: Applikation til statistikindberetning til Dyreforsøgstilsynet
 
-You can use the [editor on GitHub](https://github.com/NovoNordiskScientificApplications/AIRDSubmit/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Med dette værktøj kan du indberette dyrestatistik direkte fra et Excel ark til [Fødevarestyrelsens indberetningssystem AIRD](https://www.foedevarestyrelsen.dk/Dyr/dyrevelfaerd/Dyreforsoegstilsynet/Sider/Ansoegning-og-indberetning.aspx). 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Download 
+Den nyeste version kan hentes her: [AIRDsubmit version 1.0](https://github.com/NovoNordiskScientificApplications/AIRDSubmit/releases/download/v1.0/AIRDsubmit.1.0.zip)
 
-### Markdown
+### Manual
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Først udfyldes et excel ark med den statistik data der ønskes indberettet. Det anbefales at følgende Excel ark benyttes som udgangpunkt [Example.xlsx](/Documentation/Example.xlsx), da overskrifterne er nødvendige. Se billede
 
-```markdown
-Syntax highlighted code block
+![Guide1.png](/Documentation/Guide1.png)
 
-# Header 1
-## Header 2
-### Header 3
+Start AIRDSubmit og åben det udfyldte Excel ark. Se billede
 
-- Bulleted
-- List
+![Guide2.png](/Documentation/Guide2.png)
 
-1. Numbered
-2. List
+AIRDSubmit vil nu fortælle hvis der er nogle umiddelbare fejl i indberetningen, samt give foreslag til rettelser i en drop down menu. Se billede
 
-**Bold** and _Italic_ and `Code` text
+![Guide3.png](/Documentation/Guide3.png)
 
-[Link](url) and ![Image](src)
-```
+Når dataen er klar udfyldes brugernavn og adgangskode og herefter kan statistikken indberettes vil at trykke på Upload to AIRD. Se afnit om adgang for detailer omkring tildeling af adgangskode.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Efter indsendelse vil alle rækker der successfuldt blev indsendt blive markeret grønne, og rækker med fejl i vil blive markeret røde. Ved gentagende forsøg vil de succesfulde (grønne) rækker ikke blive indsendt igen. Se billede
 
-### Jekyll Themes
+En typisk fejl er at man ikke har lov til at indrapportere på en tilladelse. Se nedenfor for flere detailer.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/NovoNordiskScientificApplications/AIRDSubmit/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+![Guide4.png](/Documentation/Guide4.png)
 
-### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Adgang
+
+Brugernavnet er den e-mail addresse der er tilknyttet ens AIRD konto. Adgangskoden tildeles af dyreforsøgstilsynet og kan udleveres ved at kontakte dem per e-mail.
+
+En bruger har mulighed for at indberette på alle tilladelser han/hun har lov til at se. Dvs. en firma administrator kan indberette for alle tilladelser tilknyttet den juridiske profil. Herudover kan man give andre bruger tilladelse til at se og indrapportere ved at gøre dem 'venner' i AIRD. Se dyreforsøgtilsynets hjemmeside for flere detailer.
+
+
+### Teknisk information
+
+De forventede værdier for multiple choice kolonnerne kan laves om i filen AIRDsubmit.exe.config. Her kan også ændres på det årstal som anvendes hvis intet er udfyldt.
+
+Som udgangspunkt er det fikseret hvilkle data der forventes i de enkelte kolonner som set i Example.xlsx. 
+
+### Kontakt
+
+Applikationen er udviklet af Novo Nordisk A/S til alles brug. 
+
+For spørgsmål angående indberetning kontakt venligst dyreforsøgstilsynet dyreforsoegstilsynet@fvst.dk 
+
+For spørgsmål om applikationen kan udvikleren (Jesper B Rasmussen) kontaktes per e-mail jbqr@NovoNordisk.com
