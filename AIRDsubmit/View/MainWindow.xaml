@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AIRDsubmit"
         xmlns:ValidationRules="clr-namespace:AIRDsubmit.ValidationRules"        
         mc:Ignorable="d"
-        Title="AIRD Excel Uploader" Height="350" Width="1000">
+        Title="AIRD Submit" Height="350" Width="1000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -21,7 +21,7 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
-        <Label Grid.RowSpan="2"  HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top"  FontWeight="Bold" FontSize="16" Content="AIRD excel uploader"/>
+        <Label Grid.RowSpan="2"  HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top"  FontWeight="Bold" FontSize="16" Content="AIRD Submit"/>
 
         <Label Content="Username:" Grid.Column="1" FontWeight="Bold"/>
         <TextBox Name="Username" Text="{Binding Username}" Width="150" Margin="5" Grid.Column="1" Grid.Row="1" />
