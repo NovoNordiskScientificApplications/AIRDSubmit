@@ -90,7 +90,11 @@ namespace AIRDsubmit
         private void Records_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             foreach (RecordViewModel item in e.NewItems)
+            {
                 item.Row = ++MaxRow;
+                item.PropertyChanged += R_PropertyChanged;
+            }
+                
         }
 
         public void Update(RecordViewModel record)
