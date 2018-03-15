@@ -15,6 +15,8 @@ namespace AIRDsubmit
         private string DB_PATH;
 
         public ObservableCollection<RecordViewModel> Records { get; private set; }
+
+        private int MaxRow = 0;
         
         public ExcelViewModel(string filePath)
         {
@@ -40,6 +42,8 @@ namespace AIRDsubmit
                 {
                     var r = new RecordViewModel();
                     r.Row = i;
+                    if (i > MaxRow)
+                        MaxRow = i;
                     r.Permission = excelWorksheet.Cells[i, (int)ColumnIndex.Permission].Value?.ToString();
                     r.Species = excelWorksheet.Cells[i, (int)ColumnIndex.Species].Value?.ToString();
                     r.SpeciesOther = excelWorksheet.Cells[i, (int)ColumnIndex.SpeciesOther].Value?.ToString();
@@ -80,8 +84,15 @@ namespace AIRDsubmit
                 throw new Exception("Some columns did not match the expected columns\n" +
                     string.Join("\n", mismatches.Select(c => string.Format(@"Expected ""{0}"". Found ""{1}""", c.Key, c.Value))));
             }
+            Records.CollectionChanged += Records_CollectionChanged;
         }
-        
+
+        private void Records_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            foreach (RecordViewModel item in e.NewItems)
+                item.Row = ++MaxRow;
+        }
+
         public void Update(RecordViewModel record)
         {
             using(var excelPackage = new ExcelPackage(new System.IO.FileInfo(DB_PATH)))

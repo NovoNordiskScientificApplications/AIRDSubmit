@@ -53,14 +53,13 @@
                 </Style>
             </Button.Style>
         </Button>
-        <DataGrid AutoGenerateColumns="false" Grid.ColumnSpan="10" Grid.Row="2" Name="dataGrid"
+        <local:DataGrid AutoGenerateColumns="false" Grid.ColumnSpan="10" Grid.Row="2" x:Name="dataGrid"
                   BeginningEdit="grid_BeginningEdit"
                   HorizontalScrollBarVisibility="Visible"
-                  CanUserAddRows="False"
                   HeadersVisibility="All"
                   DataContext="{Binding ExcelViewModel}"
                   ItemsSource="{Binding Records}">
-            <DataGrid.Resources>
+            <local:DataGrid.Resources>
                 <Style x:Key="CellErrorStyle" TargetType="{x:Type TextBlock}">
                     <Style.Triggers>
                         <Trigger Property="Validation.HasError" Value="true">
@@ -69,8 +68,8 @@
                         </Trigger>
                     </Style.Triggers>
                 </Style>
-            </DataGrid.Resources>
-            <DataGrid.Columns>
+            </local:DataGrid.Resources>
+            <local:DataGrid.Columns>
                 <DataGridCheckBoxColumn Header="Uploaded" Binding="{Binding Uploaded, UpdateSourceTrigger=PropertyChanged}" Width="40" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Permission ID" Binding="{Binding Permission, UpdateSourceTrigger=PropertyChanged}" Width="auto"/>
                 <DataGridTemplateColumn Header="Species" Width="auto">
@@ -301,8 +300,8 @@
                 <DataGridTextColumn Header="Comments 1" Binding="{Binding Comments1, UpdateSourceTrigger=PropertyChanged}" Width="auto" ElementStyle="{StaticResource CellErrorStyle}"/>
                 <DataGridTextColumn Header="Comments 2" Binding="{Binding Comments2, UpdateSourceTrigger=PropertyChanged}" Width="auto" ElementStyle="{StaticResource CellErrorStyle}"/>
                 <DataGridTextColumn Header="Year" Binding="{Binding Year, UpdateSourceTrigger=PropertyChanged}" Width="auto" ElementStyle="{StaticResource CellErrorStyle}"/>
-            </DataGrid.Columns>
-            <DataGrid.RowStyle>
+            </local:DataGrid.Columns>
+            <local:DataGrid.RowStyle>
                 <Style TargetType="DataGridRow">
                     <Setter Property="DetailsVisibility" Value="Collapsed"/>
                     <Style.Triggers>
@@ -316,11 +315,11 @@
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
-            </DataGrid.RowStyle>
-            <DataGrid.RowValidationRules>
-                <ValidationRules:RecordValidationRule ValidationStep="CommittedValue" ValidatesOnTargetUpdated="True"/>
-            </DataGrid.RowValidationRules>
-            <DataGrid.RowDetailsTemplate>
+            </local:DataGrid.RowStyle>
+            <local:DataGrid.RowValidationRules>
+                <ValidationRules:RecordValidationRule ValidationStep="CommittedValue" ValidatesOnTargetUpdated="True" />
+            </local:DataGrid.RowValidationRules>
+            <local:DataGrid.RowDetailsTemplate>
                 <DataTemplate>
                     <Grid Margin="40,0,0,0" ToolTip="{Binding Path=ErrorMessage}">
                         <Grid.ColumnDefinitions>
@@ -332,15 +331,15 @@
                         <TextBlock Text="{Binding ErrorMessage}" Padding="4,0,0,0"  HorizontalAlignment="Left" Grid.Column="1"/>
                     </Grid>
                 </DataTemplate>
-            </DataGrid.RowDetailsTemplate>
-            <DataGrid.RowValidationErrorTemplate>
+            </local:DataGrid.RowDetailsTemplate>
+            <local:DataGrid.RowValidationErrorTemplate>
                 <ControlTemplate>
                     <Grid ToolTip="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGridRow}}, Path=(Validation.Errors)[0].ErrorContent}">
                         <Ellipse Width="12" Height="12" Fill="Red" Stroke="Black" StrokeThickness="0.5"/>
                         <TextBlock FontWeight="Bold" Padding="4,0,0,0" Margin="0" VerticalAlignment="Top" Foreground="White" Text="!"/>
                     </Grid>
                 </ControlTemplate>
-            </DataGrid.RowValidationErrorTemplate>
-        </DataGrid>
+            </local:DataGrid.RowValidationErrorTemplate>
+        </local:DataGrid>
     </Grid>
 </Window>
