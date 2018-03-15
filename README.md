@@ -30,10 +30,22 @@ En typisk fejl er at man ikke har lov til at indrapportere på en tilladelse. Se
 
 ### Adgang
 
-Brugernavnet er den e-mail addresse der er tilknyttet ens AIRD konto. Adgangskoden tildeles af dyreforsøgstilsynet og kan udleveres ved at kontakte dem per e-mail.
+Brugernavnet er den e-mail addresse der er tilknyttet ens AIRD konto. Adgangskoden tildeles af dyreforsøgstilsynet og kan udleveres ved at kontakte dem per e-mail. Både brugernavn og password er case sensitiv.
 
 En bruger har mulighed for at indberette på alle tilladelser han/hun har lov til at se. Dvs. en firma administrator kan indberette for alle tilladelser tilknyttet den juridiske profil. Herudover kan man give andre bruger tilladelse til at se og indrapportere ved at gøre dem 'venner' i AIRD. Se dyreforsøgtilsynets hjemmeside for flere detailer.
 
+
+### Typiske fejl
+
+Unauthorized: Der er en fejl i brugernavn eller password. De er case sensitive.
+
+Anonymous: Der er ikke forbindelse til internettet.
+
+CapitaId is not Matched: Du har ikke lov til at indberette på denne tilladelse. Tjek at nummeret er korrekt og hvis du indrapportere på vejene af andre, tjek at de har givet dig lov til at se tilladelsen som 'ven'.
+
+Invalid code for 'PlaceOfBirth': Kan være en fejl i place of birth, men mere sandsynligt, reuse er sat til 'YES', men dyret har ikke været indrapporteret pga. studie start før 2014, som reuse betyder.
+
+is not valid entry: En af indtastningerne i den linje matcher ikke nogen af de mulige fra drop down menuen. Feltet burde yderligere være omsluttet af en rød firkant.
 
 ### Teknisk information
 
