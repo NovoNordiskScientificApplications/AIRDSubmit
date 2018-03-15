@@ -56,6 +56,7 @@
         <local:DataGrid AutoGenerateColumns="false" Grid.ColumnSpan="10" Grid.Row="2" x:Name="dataGrid"
                   BeginningEdit="grid_BeginningEdit"
                   HorizontalScrollBarVisibility="Visible"
+                  CurrentCellChanged="grid_CurrentCellChanged"
                   HeadersVisibility="All"
                   DataContext="{Binding ExcelViewModel}"
                   ItemsSource="{Binding Records}">
@@ -88,7 +89,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
-                            <ComboBox Text="{Binding Species, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" ItemsSource="{Binding Path=DataContext.Species, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True"/>
+                            <ComboBox Text="{Binding Species, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" ItemsSource="{Binding Path=DataContext.Species, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True" Loaded="Control_ReadyForEdit"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
@@ -110,7 +111,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
-                            <ComboBox Text="{Binding Reuse}" ItemsSource="{Binding Path=DataContext.Reuse, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True"/>
+                            <ComboBox Text="{Binding Reuse}" ItemsSource="{Binding Path=DataContext.Reuse, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True" Loaded="Control_ReadyForEdit"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
@@ -130,7 +131,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
-                            <ComboBox Text="{Binding PlaceOfBirth}" ItemsSource="{Binding Path=DataContext.PlaceOfBirth, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True"/>
+                            <ComboBox Text="{Binding PlaceOfBirth}" ItemsSource="{Binding Path=DataContext.PlaceOfBirth, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True" Loaded="Control_ReadyForEdit"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
@@ -150,7 +151,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
-                            <ComboBox Text="{Binding NHPSource}" ItemsSource="{Binding Path=DataContext.NHPSource, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True"/>
+                            <ComboBox Text="{Binding NHPSource}" ItemsSource="{Binding Path=DataContext.NHPSource, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True" Loaded="Control_ReadyForEdit"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
@@ -170,7 +171,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
-                            <ComboBox Text="{Binding NHPGeneration}" ItemsSource="{Binding Path=DataContext.NHPGeneration, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True"/>
+                            <ComboBox Text="{Binding NHPGeneration}" ItemsSource="{Binding Path=DataContext.NHPGeneration, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True" Loaded="Control_ReadyForEdit"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
@@ -190,7 +191,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
-                            <ComboBox Text="{Binding GeneticStatus}" ItemsSource="{Binding Path=DataContext.GeneticStatus, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True"/>
+                            <ComboBox Text="{Binding GeneticStatus}" ItemsSource="{Binding Path=DataContext.GeneticStatus, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True" Loaded="Control_ReadyForEdit"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
@@ -210,7 +211,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
-                            <ComboBox Text="{Binding CreationOfGeneticLine}" ItemsSource="{Binding Path=DataContext.CreationOfGeneticLine, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True"/>
+                            <ComboBox Text="{Binding CreationOfGeneticLine}" ItemsSource="{Binding Path=DataContext.CreationOfGeneticLine, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True" Loaded="Control_ReadyForEdit"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
@@ -230,7 +231,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
-                            <ComboBox Text="{Binding Purpose}" ItemsSource="{Binding Path=DataContext.Purpose, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True"/>
+                            <ComboBox Text="{Binding Purpose}" ItemsSource="{Binding Path=DataContext.Purpose, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True" Loaded="Control_ReadyForEdit"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
@@ -251,7 +252,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
-                            <ComboBox Text="{Binding TestingByLegislation}" ItemsSource="{Binding Path=DataContext.TestingByLegislation, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True"/>
+                            <ComboBox Text="{Binding TestingByLegislation}" ItemsSource="{Binding Path=DataContext.TestingByLegislation, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True" Loaded="Control_ReadyForEdit"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
@@ -272,7 +273,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
-                            <ComboBox Text="{Binding LegislativeRequirements}" ItemsSource="{Binding Path=DataContext.LegislativeRequirements, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True"/>
+                            <ComboBox Text="{Binding LegislativeRequirements}" ItemsSource="{Binding Path=DataContext.LegislativeRequirements, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True" Loaded="Control_ReadyForEdit"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
@@ -292,7 +293,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
-                            <ComboBox Text="{Binding Severity}" ItemsSource="{Binding Path=DataContext.Severity, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True"/>
+                            <ComboBox Text="{Binding Severity}" ItemsSource="{Binding Path=DataContext.Severity, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Mode=OneWay}" IsReadOnly="False" IsEditable="True" Loaded="Control_ReadyForEdit"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>

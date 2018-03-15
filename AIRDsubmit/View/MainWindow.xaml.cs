@@ -54,5 +54,9 @@ namespace AIRDsubmit
             if(r != null && r.Uploaded == true)
                 e.Cancel = true;
         }
+
+        private void Control_ReadyForEdit(object sender, RoutedEventArgs e) => ((Control)sender).Focus();
+
+        private void grid_CurrentCellChanged(object sender, EventArgs e) => ((DataGrid)sender).BeginEdit();
     }
 }
