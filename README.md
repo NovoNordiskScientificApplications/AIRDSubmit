@@ -27,6 +27,8 @@ En typisk fejl er at man ikke har lov til at indrapportere på en tilladelse. Se
 
 ![Guide4.png](/Documentation/Guide4.png)
 
+Når du er færdig med at indrapportere for året, så skal du logge på AIRD med NemID og 'Færdiggøre' indberetningen. Herefter vil det ikke længere være muligt at foretage ændringer eller indberette yderligere.
+
 
 ### Adgang
 
@@ -47,11 +49,18 @@ Invalid code for 'PlaceOfBirth': Kan være en fejl i place of birth, men mere sa
 
 is not valid entry: En af indtastningerne i den linje matcher ikke nogen af de mulige fra drop down menuen. Feltet burde yderligere være omsluttet af en rød firkant.
 
+
+### FAQ
+
+"Åh nej, jeg tror jeg har dobbelt indberettet": Log in på AIRD med NemID. Under indberetning kan du trække en csv fil ud med alle indberetninger. Hvis du mener at der er en fejl kan du under edit slette de indberetninger. Tidsstemplet vil ofte være en hjælp.
+
+
 ### Teknisk information
 
 De forventede værdier for multiple choice kolonnerne kan laves om i filen AIRDsubmit.exe.config. Her kan også ændres på det årstal som anvendes hvis intet er udfyldt.
 
-Som udgangspunkt er det fikseret hvilkle data der forventes i de enkelte kolonner som set i Example.xlsx. 
+Som udgangspunkt er det fikseret hvilkle data der forventes i de enkelte kolonner som set i Example.xlsx.
+
 
 ### Kontakt
 
