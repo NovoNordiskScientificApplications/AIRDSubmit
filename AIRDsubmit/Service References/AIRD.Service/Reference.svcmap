@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://reportingdyreforsoeg.fvst.dk/StatisticsReporting.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://reportingdyreforsoeg.fvst.dk/StatisticsReporting.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="StatisticsReporting.wsdl" MetadataType="Wsdl" ID="80b7494c-3e77-4300-92b0-ad0b3199b69f" SourceId="1" SourceUrl="http://reportingdyreforsoeg.fvst.dk/StatisticsReporting.asmx?wsdl" />
-    <MetadataFile FileName="StatisticsReporting.disco" MetadataType="Disco" ID="bef60017-dc47-4965-b4ab-541c0e0ff72b" SourceId="1" SourceUrl="http://reportingdyreforsoeg.fvst.dk/StatisticsReporting.asmx?disco" />
+    <MetadataFile FileName="StatisticsReporting.disco" MetadataType="Disco" ID="51eb19e3-de8f-4962-b1ab-7ae13284dafb" SourceId="1" SourceUrl="https://reportingdyreforsoeg.fvst.dk/StatisticsReporting.asmx?disco" />
+    <MetadataFile FileName="StatisticsReporting.wsdl" MetadataType="Wsdl" ID="392cf077-911e-42dc-8891-164933283529" SourceId="1" SourceUrl="https://reportingdyreforsoeg.fvst.dk/StatisticsReporting.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

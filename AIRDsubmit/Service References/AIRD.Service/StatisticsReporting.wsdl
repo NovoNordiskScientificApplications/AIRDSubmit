@@ -363,10 +363,10 @@
   </wsdl:binding>
   <wsdl:service name="StatisticsReporting">
     <wsdl:port name="StatisticsReportingSoap" binding="tns:StatisticsReportingSoap">
-      <soap:address location="http://reportingdyreforsoeg.fvst.dk/StatisticsReporting.asmx" />
+      <soap:address location="https://reportingdyreforsoeg.fvst.dk/StatisticsReporting.asmx" />
     </wsdl:port>
     <wsdl:port name="StatisticsReportingSoap12" binding="tns:StatisticsReportingSoap12">
-      <soap12:address location="http://reportingdyreforsoeg.fvst.dk/StatisticsReporting.asmx" />
+      <soap12:address location="https://reportingdyreforsoeg.fvst.dk/StatisticsReporting.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

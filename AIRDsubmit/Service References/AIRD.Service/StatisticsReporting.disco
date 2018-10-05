@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
-  <contractRef ref="http://reportingdyreforsoeg.fvst.dk/StatisticsReporting.asmx?wsdl" docRef="http://reportingdyreforsoeg.fvst.dk/StatisticsReporting.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
-  <soap address="http://reportingdyreforsoeg.fvst.dk/StatisticsReporting.asmx" xmlns:q1="http://FVST.Dyreforsoeg.ReportingWebService/" binding="q1:StatisticsReportingSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
-  <soap address="http://reportingdyreforsoeg.fvst.dk/StatisticsReporting.asmx" xmlns:q2="http://FVST.Dyreforsoeg.ReportingWebService/" binding="q2:StatisticsReportingSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <contractRef ref="https://reportingdyreforsoeg.fvst.dk/StatisticsReporting.asmx?wsdl" docRef="https://reportingdyreforsoeg.fvst.dk/StatisticsReporting.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://reportingdyreforsoeg.fvst.dk/StatisticsReporting.asmx" xmlns:q1="http://FVST.Dyreforsoeg.ReportingWebService/" binding="q1:StatisticsReportingSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://reportingdyreforsoeg.fvst.dk/StatisticsReporting.asmx" xmlns:q2="http://FVST.Dyreforsoeg.ReportingWebService/" binding="q2:StatisticsReportingSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
 </discovery>
