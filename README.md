@@ -3,7 +3,7 @@
 Med dette værktøj kan du indberette dyrestatistik direkte fra et Excel ark til [Fødevarestyrelsens indberetningssystem AIRD](https://www.foedevarestyrelsen.dk/Dyr/dyrevelfaerd/Dyreforsoegstilsynet/Sider/Ansoegning-og-indberetning.aspx). 
 
 ### Download 
-Den nyeste version kan hentes her: [AIRDsubmit version 1.1](https://github.com/NovoNordiskScientificApplications/AIRDSubmit/releases/download/v1.1/AIRDsubmit.1.1.zip)
+Den nyeste version kan hentes her: [AIRDsubmit version 1.2](https://github.com/NovoNordiskScientificApplications/AIRDSubmit/releases/download/v1.2/AIRDsubmit.1.2.zip)
 
 ### Manual
 
